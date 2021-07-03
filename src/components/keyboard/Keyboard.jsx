@@ -1,6 +1,8 @@
+import React, { useState, useEffect } from 'react';
 import KeyboardKey from "./KeyboardKey.jsx";
 
 export default function Keyboard() {
+	
 	const keyboardKeysRow0 = [
 		{
 			keyCode: 27,
@@ -336,7 +338,6 @@ export default function Keyboard() {
 						key={index}
 						keyboardKey={ keyboardKey } 
 						trigger={ keyboardKey.trigger }
-						keyCode={ keyboardKey.keyCode }
 					/> 
 				)) }
 			</div>

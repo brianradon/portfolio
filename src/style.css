@@ -1,7 +1,7 @@
-* {
-	margin: 0;
+* { margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	color: white;
 }
 
 :root {
@@ -24,21 +24,91 @@
 }
 
 .MainContainer {
+	position: relative;
 	border: 1px solid var(--second);
-	width: calc(100% - 32px);
-	height: calc(100% - 32px);
+	width: 1720px;
+	height: 880px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; 
 }
 
 /*
+ * Top Display
+ */
+
+.topDisplay {
+	display: flex;
+	height: 100%;
+	padding: 10px;
+	grid-gap: 10px;
+}
+
+/*
+ * Skills
+ */
+.SkillsContainer {
+	border: 1px solid white;	
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	height: fit-content;
+}
+
+.ProgressBar {
+	height: 20px;	
+	position: relative; display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.exp-obtained {
+	position: absolute;
+	width: 100px;
+	height: 10px;
+	background: blue;
+	z-index: 1;
+}
+.overall-exp {
+	position: absolute;
+	height: 20px;
+	width: 100%;
+	background: red;
+}
+
+/*
+ *
+ */
+
+.Clock {
+	border: 1px solid white;
+	text-align: center;
+	font-size: 64px;
+}
+/*
+ * Main Screen
+ */
+
+.MainScreen {
+	border: 1px solid white;
+	width: 100%;
+	height: 100%;
+}
+/*
  * Keyboard
  */
+
+.Project:hover {
+	background: gray;
+	cursor: pointer;
+}
 .Keyboard {
-	background: blue;
 	color: white;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin-bottom: 10px;
 }
 
 .keyboard-row {
@@ -48,10 +118,14 @@
 
 .keyboard-row * {
 	border: 1px solid white;
-	margin: 2px;
 	padding: 10px;
 }
 
+.KeyboardKey {
+	padding: 10px 20px;
+	border-radius: 3px;
+	margin: 1px; 
+}
 /*
  * Animations or events
  */
