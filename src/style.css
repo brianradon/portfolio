@@ -23,6 +23,32 @@
     background-size: 32px 32px;
 }
 
+.LoadingScript {
+	width: 100vw;
+	height: 100vh;
+	background: black;
+	overflow: hidden;
+}
+
+.text-container {
+	position: fixed;
+	transition-duration: 10s;
+	animation-name: stepUp;
+	animation-duration: 10s;
+}
+
+@keyframes stepUp {
+	from {
+		top: 50%;
+	}
+	to {
+		top: -5000px;
+	}
+}
+.script-line {
+	font-size: 10px;
+}
+
 .MainContainer {
 	position: relative;
 	border: 1px solid var(--second);
@@ -31,8 +57,21 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between; 
+	animation-name: fade-in;
+	animation-duration: 5s;
 }
 
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 /*
  * Top Display
  */
