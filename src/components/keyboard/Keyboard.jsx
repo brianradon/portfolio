@@ -3,66 +3,6 @@ import KeyboardKey from "./KeyboardKey.jsx";
 
 export default function Keyboard() {
 	
-	const keyboardKeysRow0 = [
-		{
-			keyCode: 27,
-			trigger: "esc"
-		},
-		{
-			keyCode: 112,
-			trigger: "f1"
-		},
-		{
-			keyCode: 113,
-			trigger: "f2"
-		},
-		{
-			keyCode: 114,
-			trigger: "f3"
-		},
-		{
-			keyCode: 115,
-			trigger: "f4"
-		},
-		{
-			keyCode: 116,
-			trigger: "f5",
-		},
-		{
-			keyCode: 117,
-			trigger: "f6"
-		},
-		{
-			keyCode: 118,
-			trigger: "f7"
-		},
-		{
-			keyCode: 119,
-			trigger: "f8"
-		},
-		{
-			keyCode: 120,
-			trigger: "f9"
-		},
-		{
-			keyCode: 121,
-			trigger: "f10"
-		},
-		{
-			keyCode: 122,
-			trigger: "f11"
-		},
-		{
-			keyCode: 123,
-			trigger: "f12"
-		},
-		{
-			keyCode: 46,
-			trigger: "delete"
-		}
-	];
-
-	
 	const keyboardKeysRow1 = [
 		{
 			keyCode: 192,
@@ -174,18 +114,10 @@ export default function Keyboard() {
 		{
 			keyCode: 221,
 			trigger: "]"
-		},
-		{
-			keyCode: 220,
-			trigger: `|` 
 		}
 	];
 
 	const keyboardKeysRow3 = [
-		{
-			keyCode: 20,
-			trigger: "caps lock"
-		},
 		{
 			keyCode: 65,
 			trigger: "a"
@@ -284,63 +216,19 @@ export default function Keyboard() {
 		{
 			keyCode: 16,
 			trigger: "shift" 
-		},
-		{
-			keyCode: 38,
-			trigger: "up"
 		}
 	];
 
 	const keyboardKeysRow5 = [
 		{
-			keyCode: 17,
-			trigger: "ctrl"
-		},
-		{
-			keyCode: 18,
-			trigger: "alt"
-		},
-		{
 			keyCode: 32,
-			trigger: "space"
-		},
-		{
-			keyCode: 18,
-			trigger: "alt"
-		},
-		{
-			keyCode: 93,
-			trigger: "menu",
-		},
-		{
-			keyCode: 17,
-			trigger: "ctrl"
-		},
-		{
-			keyCode: 37,
-			trigger: "left"
-		},
-		{
-			keyCode: 40,
-			trigger: "down"
-		},
-		{
-			keyCode: 39,
-			trigger: "right"
+			trigger: " ", 
+			width: 400 
 		}
 	];
 
 	return (
 		<div className="Keyboard">
-			<div className="keyboard-row">
-				{ keyboardKeysRow0.map((keyboardKey, index) => (
-					<KeyboardKey 
-						key={index}
-						keyboardKey={ keyboardKey } 
-						trigger={ keyboardKey.trigger }
-					/> 
-				)) }
-			</div>
 			<div className="keyboard-row">
 				{ keyboardKeysRow1.map((keyboardKey, index) => (
 					<KeyboardKey 
@@ -388,6 +276,7 @@ export default function Keyboard() {
 						keyboardKey={ keyboardKey } 
 						trigger={ keyboardKey.trigger }
 						keyCode={ keyboardKey.keyCode }
+						width={ keyboardKey.width }
 					/> 
 				)) }
 			</div>

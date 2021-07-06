@@ -5,10 +5,10 @@
 }
 
 :root {
-	--background: black;
-	--background-accent: rgb(40, 40, 40);
-	--first: red;
-	--second: white;
+	--background: #111;
+	--background-accent: rgb(50, 50, 50);
+	--first: rgb(70, 82, 74);
+	--second: rgb(200, 230, 213);
 }
 
 .App {
@@ -39,19 +39,73 @@
 
 @keyframes stepUp {
 	from {
-		top: 50%;
+		top: 99%;
 	}
 	to {
 		top: -5000px;
 	}
 }
+
 .script-line {
 	font-size: 10px;
 }
 
+.LoadingBar {
+	background: blue;	
+}
+
+.load-bar {
+	background: lime;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	position: relative;
+}
+
+.load-partial {
+	position: absolute;
+	width: 100%;
+	animation-name: expand;
+	animation-duration: 6s;
+	background: orange;
+	height: 14px;
+}
+
+@keyframes expand {
+	0% {
+		width: 1%;
+	}
+	25% {
+		width: 10%
+	}
+	95% {
+		width: 95%
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+.loading-text {
+	font-size: 14px;
+}
+.load-full {
+	width: 800px;
+	height: 20px;
+	background: red;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.loading-subtitle {
+	text-align: right;
+	font-size: 14px;
+}
 .MainContainer {
 	position: relative;
-	border: 1px solid var(--second);
+	border: 1px solid var(--first);
+	border-radius: 3px;
 	width: 1720px;
 	height: 880px;
 	display: flex;
@@ -78,7 +132,7 @@
 
 .topDisplay {
 	display: flex;
-	height: 100%;
+	height: 600px;
 	padding: 10px;
 	grid-gap: 10px;
 }
@@ -86,15 +140,45 @@
 /*
  * Skills
  */
-.SkillsContainer {
-	border: 1px solid white;	
+
+.left-container {
 	display: flex;
 	flex-direction: column;
-	width: 300px;
+	grid-gap: 10px;
+}
+
+.SkillsContainer {
+	border: 1px solid var(--first);	
+	border-radius: 3px;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	width: 100%;
 	height: fit-content;
 }
 
+.SkillsContainer h1 {
+	text-align: center;
+	font-family: "Orbitron";
+	color: var(--second);
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.Skills {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 10px;
+}
+
+.Skill {
+	font-family: "IBM Plex Mono";
+	color: var(--second);
+	font-size: 14px;
+}
+
 .ProgressBar {
+	margin-top: 4px;
 	height: 20px;	
 	position: relative; display: flex;
 	flex-direction: column;
@@ -104,15 +188,18 @@
 .exp-obtained {
 	position: absolute;
 	width: 100px;
-	height: 10px;
-	background: blue;
+	height: 2px;
+	left: 5px;
+	background: var(--second);
 	z-index: 1;
 }
+
 .overall-exp {
 	position: absolute;
 	height: 20px;
 	width: 100%;
-	background: red;
+	border: 1px solid var(--first);
+	border-radius: 3px;
 }
 
 /*
@@ -120,9 +207,14 @@
  */
 
 .Clock {
-	border: 1px solid white;
+	border: 1px solid var(--first);
+	border-radius: 3px;
+	padding: 10px;
+	width: 375px;
 	text-align: center;
 	font-size: 64px;
+	font-family: "Orbitron";
+	color: var(--second);
 }
 /*
  * Main Screen
@@ -133,16 +225,60 @@
 	width: 100%;
 	height: 100%;
 }
-/*
- * Keyboard
- */
 
+.HelloWorld {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.greeting {
+	font-family: "IBM Plex Mono";
+	color: var(--second);
+	font-size: 18px;
+}
+
+.right-container {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 20px;
+}
+.Navigation {
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	padding: 10px;
+}
+
+.NavButton {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+}
+
+.NavButton * {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+ion-icon {
+	color: var(--second) !important;
+	font-size: 48px;
+}
+
+.navName {
+	margin-top: 4px;
+}
 .Project:hover {
 	background: gray;
 	cursor: pointer;
 }
 .Keyboard {
-	color: white;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -150,21 +286,88 @@
 	margin-bottom: 10px;
 }
 
+.KeyboardKey {
+	color: var(--second);
+}
+.Radar-Container {
+	border: 1px solid white;
+	padding: 10px;
+	position: relative;
+	width: 300px;
+}
+
+.center-circle {
+	height: 8px;
+	width: 8px;
+	background: royalblue;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	right: 50%;
+	bottom: 50%;
+	border-radius: 50%;
+}
+.sweep {
+	position: absolute;	
+}
+.radar {
+	position: relative;
+  width: 248px; height: 248px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.5),
+    inset 0 0 0 1px hsla(0, 0%, 100%, 0.15);
+  animation: pulse 3s infinite;
+  margin: auto;
+}
+
+@keyframes pulse {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+.sweep {
+  box-sizing: border-box;
+  top: 16px; left: 16px;
+  border-right: solid 1px hsla(0, 100%, 100%, 0.25);
+  width: 108px; height: 108px;
+  border-radius: 100% 0 0 0;
+  transform-origin: 100% 100%;
+  background: linear-gradient(50deg, rgba(34, 34, 34, 0) 56%, hsla(0, 100%, 100%, 1));
+  animation: sweep 5s infinite linear;
+}
+
+@keyframes sweep { to { transform: rotate(360deg); } }
+
+.bottomDisplay {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 15px;
+}
 .keyboard-row {
 	display: flex;
 	justify-content: center;
 }
 
 .keyboard-row * {
-	border: 1px solid white;
-	padding: 10px;
+	border: 1px solid var(--first);
+	font-family: "IBM Plex Mono";
+	font-size: 16px;
 }
 
 .KeyboardKey {
+	min-height: 40px;
 	padding: 10px 20px;
 	border-radius: 3px;
 	margin: 1px; 
 }
+
 /*
  * Animations or events
  */

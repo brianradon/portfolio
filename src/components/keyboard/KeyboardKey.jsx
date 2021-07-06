@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function KeyboardKey( { keyboardKey } ) {
+export default function KeyboardKey( { trigger, keyboardKey } ) {
 	
 	const [current, setCurrent] = useState(false);
 
@@ -22,7 +22,7 @@ export default function KeyboardKey( { keyboardKey } ) {
 	}, []);
 
 	return (
-		<div className={`KeyboardKey ${current && "flash-key"}`}>
+		<div style={{width: `${keyboardKey.width}px` }} className={ `KeyboardKey ${current && "flash-key"}` }>
 			{ keyboardKey.trigger }
 		</div>
 	)
