@@ -47,28 +47,27 @@
 }
 
 .script-line {
-	font-size: 10px;
+	font-size: 14px;
+	font-family: "IBM Plex Mono";
 }
 
 .LoadingBar {
-	background: blue;	
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
 }
 
 .load-bar {
-	background: lime;
-	display: flex;
-	align-items: center;
-	padding: 10px;
-	position: relative;
 }
 
 .load-partial {
-	position: absolute;
 	width: 100%;
+	border: 1px solid var(--first);
+	border-radius: 3px;
 	animation-name: expand;
 	animation-duration: 6s;
-	background: orange;
-	height: 14px;
+	background: var(--second);
+	height: 100%;
 }
 
 @keyframes expand {
@@ -87,20 +86,27 @@
 }
 
 .loading-text {
+	color: var(--second);
+	padding-bottom: 10px;
 	font-size: 14px;
+	font-family: "IBM Plex Mono";
 }
 .load-full {
 	width: 800px;
 	height: 20px;
-	background: red;
-	position: relative;
+	padding: 5px;
+	border: 1px solid var(--first);
 	display: flex;
 	align-items: center;
+	border-radius: 3px;
 }
 
 .loading-subtitle {
 	text-align: right;
+	color: var(--second);
+	font-family: "IBM Plex Mono";
 	font-size: 14px;
+	padding-top: 10px;
 }
 .MainContainer {
 	position: relative;
@@ -118,12 +124,16 @@
 @keyframes fade-in {
 	0% {
 		opacity: 0;
+		margin-bottom: 200px;
 	}
 	50% {
 		opacity: 0;
+		margin-bottom: 100px;
 	}
 	100% {
 		opacity: 1;
+		transition: translateY(0);
+		margin-bottom: 0;
 	}
 }
 /*
@@ -243,11 +253,13 @@
 .right-container {
 	display: flex;
 	flex-direction: column;
-	grid-gap: 20px;
+	grid-gap: 10px;
 }
 .Navigation {
 	display: grid;
 	grid-template-columns: repeat(2,1fr);
+	width: 375px;
+	border: 1px solid var(--first);
 	padding: 10px;
 }
 
@@ -267,8 +279,21 @@
 }
 
 ion-icon {
-	color: var(--second) !important;
+	color: var(--first) !important;
 	font-size: 48px;
+}
+
+a *{
+	color: var(--second);
+}
+
+a {
+	font-family: "IBM Plex Mono";
+	text-decoration: none;
+}
+
+ion-icon:hover {
+	color: var(--second) !important;
 }
 
 .navName {
@@ -290,10 +315,12 @@ ion-icon {
 	color: var(--second);
 }
 .Radar-Container {
-	border: 1px solid white;
+	border: 1px solid var(--first);
 	padding: 10px;
 	position: relative;
-	width: 300px;
+	width: 375px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .center-circle {

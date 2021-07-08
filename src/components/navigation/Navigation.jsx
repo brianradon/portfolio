@@ -5,17 +5,17 @@ export default function Navigation() {
 		{
 			name: "main",
 			route: "/",
-			icon: <ion-icon className="icon" name="heart"></ion-icon>
+			icon: <ion-icon name="planet-outline"></ion-icon> 
 		},
 		{
 			name: "projects",
 			route: "/projects",
-			icon: ""
+			icon: <ion-icon name="aperture-outline"></ion-icon>
 		},
 		{
 			name: "contact",
 			route: "/contact",
-			icon: ""
+			icon: <ion-icon name="radio-outline"></ion-icon> 
 		}
 	]
 	return ( 
