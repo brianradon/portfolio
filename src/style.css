@@ -23,6 +23,27 @@
     background-size: 32px 32px;
 }
 
+.window-subject, .window-subject span {
+	padding-bottom: 3px;
+	font-size: 14px;
+	font-family: "IBM Plex Mono";
+	color: var(--second);
+	width: fit-content;
+}
+
+.window-subject > .underlineF {
+	width: 100%;
+	height: 1px;
+	background: var(--first);
+}
+
+.window-subject > .underlineS {
+	width: 100%;
+	margin-top: 3px;
+	height: 1px;
+	background: var(--first);
+}
+
 .LoadingScript {
 	width: 100vw;
 	height: 100vh;
@@ -108,6 +129,7 @@
 	font-size: 14px;
 	padding-top: 10px;
 }
+
 .MainContainer {
 	position: relative;
 	border: 1px solid var(--first);
@@ -229,19 +251,34 @@
 /*
  * Main Screen
  */
-
+	
 .MainScreen {
-	border: 1px solid white;
+	border: 1px solid var(--first);
+	border-radius: 3px;
+	padding: 20px;
 	width: 100%;
 	height: 100%;
+	display: grid;
+	grid-template-columns: minmax(0, 100%) auto;
+	position: relative;
+}
+
+.main-screen-border {
+	border-radius: 3px;
+	width: 100%;
+	height: 100%;
+	padding: 6px;
+	border: 1px solid var(--second);
 }
 
 .HelloWorld {
+	grid-column: span 2;
 	height: 100%;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: absolute;
 }
 
 .greeting {
@@ -292,6 +329,10 @@ a {
 	text-decoration: none;
 }
 
+a:hover {
+	cursor: pointer;
+}
+
 ion-icon:hover {
 	color: var(--second) !important;
 }
@@ -299,10 +340,42 @@ ion-icon:hover {
 .navName {
 	margin-top: 4px;
 }
-.Project:hover {
+
+.project-container {
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+}
+
+.project-container:hover {
 	background: gray;
 	cursor: pointer;
 }
+
+.direct-links {
+	display: flex;
+	grid-gap: 50px;
+	margin-right: 20px;
+}
+
+.direct-links a:hover {
+	background: blue;
+}
+
+.project-detail {
+	max-width: 400px;
+	padding-left: 20px;
+	display: flex;
+	flex-direction: column;
+	grid-gap: 10px;
+}
+
+.project-name, .project-info, .project-tech, .project-name span, .project-info span, .project-tech span {
+	font-family: "IBM Plex Mono";
+	font-size: 14px;
+	color: var(--second);
+}
+
 .Keyboard {
 	display: flex;
 	flex-direction: column;
@@ -326,7 +399,7 @@ ion-icon:hover {
 .center-circle {
 	height: 8px;
 	width: 8px;
-	background: royalblue;
+	background: var(--second);
 	position: absolute;
 	left: 50%;
 	top: 50%;

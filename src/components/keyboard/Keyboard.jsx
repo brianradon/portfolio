@@ -119,6 +119,10 @@ export default function Keyboard() {
 
 	const keyboardKeysRow3 = [
 		{
+			keyCode: 20,
+			trigger: "caps lock"
+		},
+		{
 			keyCode: 65,
 			trigger: "a"
 		},
